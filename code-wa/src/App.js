@@ -1,8 +1,11 @@
 import './App.css';
+import Container from './js/Container';
 
 function App() {
   return (
-    <div className="App">TEST</div>
+    <div className="App">
+      <Container/>
+    </div>
   );
 }
 
