@@ -1,7 +1,10 @@
 import React from "react";
 import "../scss/container.scss"
-const Container = () => {
-  return <div class="container"></div>;
+import Search from "./Search";
+const Container = (props) => {
+  return <div class="container">
+    <Search/>
+  </div>;
 };
 
 export default Container;
