@@ -1,0 +1,44 @@
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  &__humidity,
+  &__wind {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    &__icon {
+      color: #06283d;
+      font-size: 26px;
+      margin-right: 10px;
+      margin-top: 6px;
+    }
+
+    &__textWrapper {
+      &__text {
+        color: #06283d;
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+    &__label {
+      color: #06283d;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__humidity {
+    padding-left: 20px;
+    justify-content: flex-start;
+  }
+
+  &__wind {
+    padding-right: 20px;
+    justify-content: flex-end;
+  }
+}
+
