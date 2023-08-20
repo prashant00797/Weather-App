@@ -2,7 +2,7 @@ import React from "react";
 import "../scss/nodataavailable.scss";
 import noData from "../asset/image/noData.png";
 
-const NoDataAvailable = () => {
+export const NoDataAvailable = () => {
   return (
     <div className="no-data">
       <img className="no-data__img" src={noData} />
