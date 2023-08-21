@@ -1,6 +1,7 @@
 import React from "react";
 import "../scss/weatherdetails.scss";
 
+//local dependendencies
 import { get } from "loadsh";
 
 const WeatherDetails = (props) => {

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "../scss/search.scss";
+
+//local dependencies
 import { GetWeatherData } from "../service/GetWeatherData";
 
-const handleCityChange = async(city, setComponentData) => {
+const handleCityChange = async (city, setComponentData, setFirstTimeLoad) => {
   const _weatherData = await GetWeatherData(city);
+  setFirstTimeLoad(true);
   setComponentData(_weatherData);
   return _weatherData;
 };
 
 export const Search = (props) => {
-  const{setComponentData} = props;
+  const { setComponentData, setFirstTimeLoad } = props;
   const [city, setCity] = useState("");
   return (
     <div className="search-box">
@@ -23,7 +26,9 @@ export const Search = (props) => {
       {
         <button
           className="fa-solid fa-magnifying-glass search-box__button"
-          onClick={() => { handleCityChange(city, setComponentData) }}
+          onClick={() => {
+            handleCityChange(city, setComponentData, setFirstTimeLoad);
+          }}
         ></button>
       }
     </div>

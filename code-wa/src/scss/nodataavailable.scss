@@ -1,20 +1,19 @@
-.not-found {
+.no-data {
   width: 100%;
   text-align: center;
   margin-top: 50px;
-  scale: 0;
-  opacity: 0;
-  display: none;
+  // scale: 0;
+  // opacity: 0;
+  // display: none;
 
   &__img {
+    // margin-top: 10px;
     width: 70%;
-
-    &__description {
-      color: #06283d;
-      font-size: 22px;
-      font-weight: 500;
-      margin-top: 12px;
-    }
+  }
+  &__description {
+    color: #06283d;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
   }
 }
-

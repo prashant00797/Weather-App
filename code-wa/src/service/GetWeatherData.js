@@ -1,3 +1,4 @@
+//Please use https://home.openweathermap.org/ open Weather api to create your own api keys. The below one will be exhausted
 const APIKey = "11adffcccf116d12912ce13bd9665fde";
 
 export const GetWeatherData = async (city) => {
