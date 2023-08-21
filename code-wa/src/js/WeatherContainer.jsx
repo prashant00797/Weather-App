@@ -1,6 +1,10 @@
 import React from "react";
 import "../scss/weathercontainer.scss";
+
+//local dependencies
 import { get, head } from "loadsh";
+
+//images
 import clear from "../asset/image/clear.png";
 import rain from "../asset/image/rain.png";
 import snow from "../asset/image/snow.png";
@@ -10,7 +14,7 @@ import mist from "../asset/image/mist.png";
 
 const renderWeatherImage = (weather) => {
   let _src;
-  const weatherType = get(weather, 'main','');
+  const weatherType = get(weather, "main", "");
   switch (weatherType) {
     case "Clear":
       _src = clear;
@@ -38,7 +42,7 @@ const renderWeatherImage = (weather) => {
     default:
       _src = "";
   }
-  return <img className="weather-box__image" src={_src} alt="weather" />;
+  return <img className="weather-box__image" src={_src} alt={weather} />;
 };
 
 const WeatherContainer = (props) => {

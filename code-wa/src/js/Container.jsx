@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "../scss/container.scss";
+
+//components
 import Search from "./Search";
 import NoDataAvailable from "./NoDataAvailable";
 import WeatherContainer from "./WeatherContainer";
 import WeatherDetails from "./WeatherDetails";
+
+//local dependencies
 import { get, isEqual } from "loadsh";
+import classNames from "classnames";
 
 const renderWeatherContainer = (componentData) => {
   return (
@@ -23,13 +28,20 @@ const renderView = (status, componentData) => {
   );
 };
 
-const Container = (props) => {
+const Container = () => {
+  const [firstTimeLoad, setFirstTimeLoad] = useState(false);
   const [componentData, setComponentData] = useState({});
-  const status = isEqual(get(componentData, "cod", 401), 200);
+  const status = isEqual(get(componentData, "cod", 404), 200);
+  const containerClassname = classNames("container", {
+    "container--expand": firstTimeLoad === true,
+  });
   return (
-    <div className="container">
-      <Search setComponentData={setComponentData} />
-      {renderView(status, componentData)}
+    <div className={containerClassname}>
+      <Search
+        setComponentData={setComponentData}
+        setFirstTimeLoad={setFirstTimeLoad}
+      />
+      {firstTimeLoad && renderView(status, componentData)}
     </div>
   );
 };
