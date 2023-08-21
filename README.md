@@ -1,2 +1,3 @@
 # Weather-App
-A mini weather app application which takes help of Weather api to showcase the weather of the entered location.
+A mini weather app application that takes the help of Weather API to showcase the weather of the entered location.
+(WORK IN PROGRESS)
