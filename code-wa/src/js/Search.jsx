@@ -22,6 +22,8 @@ export const Search = (props) => {
         placeholder="Enter your location"
         className="search-box__input"
         onChange={(event) => setCity(event.target.value)}
+        onKeyDown={(event) => setCity(event.target.value)}
+        tabIndex={"0"}
       />
       {
         <button
@@ -29,6 +31,8 @@ export const Search = (props) => {
           onClick={() => {
             handleCityChange(city, setComponentData, setFirstTimeLoad);
           }}
+          onKeyDown={(event) => handleCityChange(city, setComponentData, setFirstTimeLoad)}
+          tabIndex={"0"}
         ></button>
       }
     </div>
