@@ -34,11 +34,19 @@
   &__humidity {
     padding-left: 20px;
     justify-content: flex-start;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 20px;
+    }
   }
 
   &__wind {
     padding-right: 20px;
     justify-content: flex-end;
+    
+    @media screen and (max-width: 768px) {
+      margin-left: 20px;
+    }
   }
 }
 
